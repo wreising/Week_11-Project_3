@@ -38,18 +38,5 @@ db.once('open', () => {
   });
 });
 
-const mongodb = require('mongodb').MongoClient
 
-const connectionStringURI = `mongodb://localhost:27969/brickdb`
-
-mongodb.connect(
-  connectionStringURI,
-  {useNewIrlParser: true, useUnifiedTopology: true},
-  (err, client) => {
-    db = client.db()
-    app.listen(port, () => {
-      console.log(`BrickBlog listening at http://localhost:${port}`)
-    })
-  }
-)
 

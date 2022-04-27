@@ -21,7 +21,7 @@ const postSchema = new Schema({
     maxlength: 150,
     trim: true,
   },
-  postPicture:{
+  postPicture: {
     type: Upload,
     required: 'Share a photo of your creation!',
   }

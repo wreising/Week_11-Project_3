@@ -2,7 +2,7 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 
-  scalar Upload  
+  scalar FileUpload  
 
   type User {
     _id: ID
@@ -44,7 +44,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPost(postText: String!, post): Post
+    addPost(postText: String!): Post
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
