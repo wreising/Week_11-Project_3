@@ -14,9 +14,11 @@ import Login from './components/Login'
 function App() {
 
   const [pageState, setPageState] = useState({
-    Catagories: true,
+    Catagories: false,
     MyPosts: false,
-    CurrentPosts: false,
+    CurrentPosts: true,
+    Signup: false,
+    Login: false
   })
 
   return (
