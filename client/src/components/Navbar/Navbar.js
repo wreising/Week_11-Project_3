@@ -14,19 +14,23 @@ import { setPageState } from 'react'
 const ButtonAppBar = ({ pageState, setPageState }) => {
 
   const handleOpenCurrentPosts = () => {
-    setPageState({ ...pageState, CurrentPosts: true, Catagories: false, MyPosts: false })
+    setPageState({ ...pageState, CurrentPosts: true, Catagories: false, MyPosts: false, Login: false, Signup: false })
   }
 
   const handleOpenCatagories = () => {
-    setPageState({ ...pageState, CurrentPosts: false, Catagories: true, MyPosts: false })
+    setPageState({ ...pageState, CurrentPosts: false, Catagories: true, MyPosts: false, Login: false, Signup: false })
   }
 
   const handleOpenMyPosts = () => {
-    setPageState({ ...pageState, CurrentPosts: false, Catagories: false, MyPosts: true })
+    setPageState({ ...pageState, CurrentPosts: false, Catagories: false, MyPosts: true, Login: false, Signup: false })
   }
 
   const handleOpenLogin = () => {
-    setPageState({ ...pageState, CurrentPosts: false, Catagories: false, MyPosts: true })
+    setPageState({ ...pageState, CurrentPosts: false, Catagories: false, MyPosts: false, Login: true, Signup: false })
+  }
+
+  const handleOpenSignup = () => {
+    setPageState({ ...pageState, CurrentPosts: false, Catagories: false, MyPosts: false, Login: false, Signup: true })
   }
 
   return (
@@ -58,7 +62,7 @@ const ButtonAppBar = ({ pageState, setPageState }) => {
             <Button color="inherit" onClick={handleOpenLogin}>Login</Button>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
-            <Button color="inherit" onClick={handleOpenLogin}>Sign In</Button>
+            <Button color="inherit" onClick={handleOpenSignup}>Signup</Button>
           </Typography>
         </Toolbar>
       </AppBar>
