@@ -12,7 +12,7 @@ export default function ButtonAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -20,11 +20,21 @@ export default function ButtonAppBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
+          <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
+            Brick Blog
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
+            <Button color="inherit">Current Posts</Button>
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
+            <Button color="inherit">My Posts</Button>
+          </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            <Button color="inherit">Categories</Button>
           </Typography>
           <Button color="inherit">Login</Button>
+          <Button color="inherit">Sign Up</Button>
         </Toolbar>
       </AppBar>
     </Box>
