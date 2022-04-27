@@ -1,8 +1,12 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Post } = require('../models');
 const { signToken } = require('../utils/auth');
+const { GraphQLUpload } = require('graphql-upload');
 
 const resolvers = {
+
+  Upload: GraphQLUpload,
+
   Query: {
     users: async () => {
       return User.find().populate('posts');

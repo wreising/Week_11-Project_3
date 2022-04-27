@@ -2,11 +2,11 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema({
-  postText: {
+  postTitle: {
     type: String,
-    required: 'You need to leave a post!',
+    required: 'You need to title your creation!',
     minlength: 1,
-    maxlength: 280,
+    maxlength: 150,
     trim: true,
   },
   postAuthor: {
@@ -14,6 +14,17 @@ const postSchema = new Schema({
     required: true,
     trim: true,
   },
+  postDescription: {
+    type: String,
+    required: 'Describe your creation!',
+    minlength: 1,
+    maxlength: 150,
+    trim: true,
+  },
+  postPicture:{
+    type: Upload,
+    required: 'Share a photo of your creation!',
+  }
   createdAt: {
     type: Date,
     default: Date.now,
