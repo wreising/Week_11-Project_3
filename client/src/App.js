@@ -16,7 +16,7 @@ function App() {
   const [pageState, setPageState] = useState({
     Catagories: true,
     MyPosts: false,
-    CurrentPosts: true,
+    CurrentPosts: false,
   })
 
   return (
