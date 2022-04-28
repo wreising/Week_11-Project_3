@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-} from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import CurrentPosts from './pages/CurrentPost';
@@ -12,6 +8,7 @@ import Login from './pages/Login';
 import MyPosts from './pages/MyPosts';
 import Signup from './pages/Signup';
 import Single from './pages/Single';
+// import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
