@@ -8,13 +8,35 @@ const Header = () => {
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
         {/* Use Link component to create a link that returns to the homepage on click */}
         <Link className="text-dark" to="/">
-          <h1 className="m-0" style={{ fontSize: '3rem' }}>
-            Tech Friends
+          <h1 className="m-0" style={{ fontSize: '2rem' }}>
+            Current Posts
           </h1>
         </Link>
-        <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-          Meet your new programming pals.
-        </p>
+        <Link className="text-dark" to="/MyPosts">
+          <h1 className="m-0" style={{ fontSize: '2rem' }}>
+            MyPosts
+          </h1>
+        </Link>
+        <Link className="text-dark" to="/Catagories">
+          <h1 className="m-0" style={{ fontSize: '2rem' }}>
+            Catagories
+          </h1>
+        </Link>
+        <Link className="text-dark" to="/Single">
+          <h1 className="m-0" style={{ fontSize: '2rem' }}>
+            Single
+          </h1>
+        </Link>
+        <Link className="text-dark" to="/Signup">
+          <h1 className="m-0" style={{ fontSize: '2rem' }}>
+            Signup
+          </h1>
+        </Link>
+        <Link className="text-dark" to="/Login">
+          <h1 className="m-0" style={{ fontSize: '2rem' }}>
+            Login
+          </h1>
+        </Link>
       </div>
     </header>
   );

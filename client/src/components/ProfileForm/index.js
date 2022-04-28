@@ -37,33 +37,39 @@ const ProfileForm = () => {
   };
 
   return (
-    <div>
-      <h3>Add yourself to the list...</h3>
-      <form
-        className="flex-row justify-center justify-space-between-md align-center"
-        onSubmit={handleFormSubmit}
-      >
-        <div className="col-12 col-lg-9">
-          <input
-            placeholder="Add your profile name..."
-            value={name}
-            className="form-input w-100"
-            onChange={(event) => setName(event.target.value)}
-          />
-        </div>
 
-        <div className="col-12 col-lg-3">
-          <button className="btn btn-info btn-block py-3" type="submit">
-            Add Profile
-          </button>
-        </div>
-        {error && (
-          <div className="col-12 my-3 bg-danger text-white p-3">
-            Something went wrong...
-          </div>
-        )}
-      </form>
+    <div class="window">
+      <h1>Current Posts</h1>
+      <p>This is the page for Current Posts.</p>
     </div>
+
+    // <div>
+    //   <h3>Add yourself to the list...</h3>
+    //   <form
+    //     className="flex-row justify-center justify-space-between-md align-center"
+    //     onSubmit={handleFormSubmit}
+    //   >
+    //     <div className="col-12 col-lg-9">
+    //       <input
+    //         placeholder="Add your profile name..."
+    //         value={name}
+    //         className="form-input w-100"
+    //         onChange={(event) => setName(event.target.value)}
+    //       />
+    //     </div>
+
+    //     <div className="col-12 col-lg-3">
+    //       <button className="btn btn-info btn-block py-3" type="submit">
+    //         Add Profile
+    //       </button>
+    //     </div>
+    //     {error && (
+    //       <div className="col-12 my-3 bg-danger text-white p-3">
+    //         Something went wrong...
+    //       </div>
+    //     )}
+    //   </form>
+    // </div>
   );
 };
 
