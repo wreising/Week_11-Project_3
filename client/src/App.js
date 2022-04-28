@@ -1,18 +1,11 @@
 import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttpLink,
 } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-
-function App() {
 import CurrentPosts from './pages/CurrentPost';
 import Catagories from './pages/Catagories';
 import Login from './pages/Login';

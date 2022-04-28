@@ -35,6 +35,8 @@ export const ADD_THOUGHT = gql`
         _id
         commentText
       }
+    }}
+`;
 export const ADD_PROFILE = gql`
   mutation addProfile($name: String!) {
     addProfile(name: $name) {
@@ -42,8 +44,7 @@ export const ADD_PROFILE = gql`
       name
       skills
     }
-  }
-`;
+  }`
 
 export const ADD_COMMENT = gql`
   mutation addComment($thoughtId: ID!, $commentText: String!) {
@@ -57,6 +58,10 @@ export const ADD_COMMENT = gql`
         commentText
         createdAt
       }
+    }
+  }
+`;
+
 export const ADD_SKILL = gql`
   mutation addSkill($profileId: ID!, $skill: String!) {
     addSkill(profileId: $profileId, skill: $skill) {
@@ -64,5 +69,4 @@ export const ADD_SKILL = gql`
       name
       skills
     }
-  }
-`;
+  }`
