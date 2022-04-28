@@ -8,6 +8,7 @@ const resolvers = {
   Upload: GraphQLUpload,
 
   Query: {
+    hello: () => "Hello World",
     users: async () => {
       return User.find().populate('posts');
     },
@@ -28,6 +29,8 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
   },
+
+  GraphQLUpload: GraphQLUpload,
 
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
@@ -68,6 +71,25 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+
+   imageUpload: async (parent, { file }) => {
+      const { createReadStream, filename, mimetype, encoding } = await file;
+
+      // Invoking the `createReadStream` will return a Readable Stream.
+      // See https://nodejs.org/api/stream.html#stream_readable_streams
+      const stream = createReadStream();
+
+      // This is purely for demonstration purposes and will overwrite the
+      // local-file-output.txt in the current working directory on EACH upload.
+      const out = require('fs').createWriteStream('local-file-output.txt');
+      stream.pipe(out);
+      await finished(out);
+
+      return { filename, mimetype, encoding };
+    },
+  
+
+
     addComment: async (parent, { postId, commentText }, context) => {
       if (context.user) {
         return Oist.findOneAndUpdate(

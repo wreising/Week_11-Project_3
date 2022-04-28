@@ -2,7 +2,11 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 
-  scalar FileUpload  
+  scalar GraphQLUpload
+
+  type Hello {
+    text: String
+  }
 
   type User {
     _id: ID
@@ -16,9 +20,15 @@ const typeDefs = gql`
     _id: ID
     postText: String
     postAuthor: String
-    
+    image: [Image]!
     createdAt: String
     comments: [Comment]!
+  }
+
+  type Image {
+    filename: String!
+    mimetype: String!
+    encoding: String!
   }
 
   type Comment {
@@ -34,6 +44,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    hello: String!
     users: [User]
     user(username: String!): User
     posts(username: String): [Post]
@@ -45,6 +56,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addPost(postText: String!): Post
+    imageUpload(filename: String!, mimetype: String!, encoding: String!): Post
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post

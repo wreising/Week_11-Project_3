@@ -21,10 +21,23 @@ const postSchema = new Schema({
     maxlength: 150,
     trim: true,
   },
-  postPicture: {
-    type: Upload,
-    required: 'Share a photo of your creation!',
-  }
+  image: {
+    {
+      fileName: {
+        type: String,
+        required: true,
+      },
+      file: {
+        data: Buffer,
+        contentType: String,
+      },
+      uploadDate: {
+        type: Date,
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+      },
+    },
+  },
   createdAt: {
     type: Date,
     default: Date.now,
