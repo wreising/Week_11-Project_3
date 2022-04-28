@@ -15,6 +15,15 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_PROFILES = gql`
+  query allProfiles {
+    profiles {
+      _id
+      name
+      skills
+    }
+  }`
+
 export const QUERY_THOUGHTS = gql`
   query getThoughts {
     thoughts {
@@ -26,7 +35,7 @@ export const QUERY_THOUGHTS = gql`
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
+export const QUERY_THOUGHT = gql`
   query getSingleThought($thoughtId: ID!) {
     thought(thoughtId: $thoughtId) {
       _id
@@ -55,6 +64,14 @@ export const QUERY_ME = gql`
         thoughtAuthor
         createdAt
       }
+    }}
+`;
+
+export const QUERY_SINGLE_PROFILE = gql`
+  query singleProfile($profileId: ID!) {
+    profile(profileId: $profileId) {
+      _id
+      name
+      skills
     }
   }
-`;

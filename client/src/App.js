@@ -1,49 +1,56 @@
-import './App.css'
-import { useState } from 'react'
-import { pageState } from 'react'
-import { setPageState } from 'react'
-import CssBaseline from '@mui/material/CssBaseline'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Catagories from './components/Catagories'
-import MyPosts from './components/MyPosts'
-import CurrentPosts from './components/CurrentPosts'
-import Signup from './components/Signup'
-import Login from './components/Login'
-
+import React from 'react';
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttpLink,
 } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import CurrentPosts from './pages/CurrentPost';
+import Catagories from './pages/Catagories';
+import Login from './pages/Login';
+import MyPosts from './pages/MyPosts';
+import Signup from './pages/Signup';
+import Single from './pages/Single';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
-
-  const [pageState, setPageState] = useState({
-    Catagories: false,
-    MyPosts: false,
-    CurrentPosts: true,
-    Signup: false,
-    Login: false
-  })
-
   return (
-    <>
-      <CssBaseline />
-      <Navbar pageState={pageState} setPageState={setPageState} />
-      {pageState.CurrentPosts ? <CurrentPosts /> : ''}
-      {pageState.Catagories ? <Catagories /> : ''}
-      {pageState.MyPosts ? <MyPosts /> : ''}
-      {pageState.Signup ? <Signup /> : ''}
-      {pageState.Login ? <Login /> : ''}
-      <Footer />
-    </>
-  )
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <Header />
+          <div className="container">
+            <Route exact path="/">
+              <CurrentPosts />
+            </Route>
+            <Route exact path="/Catagories">
+              <Catagories />
+            </Route>
+            <Route exact path="/Login">
+              <Login />
+            </Route>
+            <Route exact path="/Signup">
+              <Signup />
+            </Route>
+            <Route exact path="/MyPosts">
+              <MyPosts />
+            </Route>
+            <Route exact path="/Single">
+              <Single />
+            </Route>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+    </ApolloProvider>
+  );
 }
 
 export default App;
-
