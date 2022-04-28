@@ -37,7 +37,7 @@ const ButtonAppBar = ({ pageState, setPageState }) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          {/* <IconButton
+          <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -45,8 +45,8 @@ const ButtonAppBar = ({ pageState, setPageState }) => {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton> */}
-          <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 0 }} mr={3}>
             Brick Blog
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
