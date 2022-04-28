@@ -66,7 +66,7 @@ app.post('/create', (req, res) => {
   );
 });
 
-app.get('/read', (req, res) => {
+app.get('/readAll', (req, res) => {
   db.collection('brickdb'
     .find({})
     .toArray((err, results) => {
