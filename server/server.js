@@ -51,7 +51,7 @@ mongodb.connect(
 )
 
 app.post('/create', (req, res) => {
-  db.collection('brickdb').insertOne(
+  db.collection('brick-blogDB').insertOne(
     { title: req.body.title, 
       keyWords: req.body.keyWords,
       creator: req.body.creator,
@@ -66,7 +66,7 @@ app.post('/create', (req, res) => {
 });
 
 app.get('/readAll', (req, res) => {
-  db.collection('brickdb'
+  db.collection('brick-blogDB'
     .find({})
     .toArray((err, results) => {
       if (err) throw err
