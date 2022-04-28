@@ -33,7 +33,9 @@ const ButtonAppBar = ({ pageState, setPageState }) => {
     setPageState({ ...pageState, CurrentPosts: false, Catagories: false, MyPosts: false, Login: false, Signup: true })
   }
 
+
   return (
+
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
@@ -67,6 +69,7 @@ const ButtonAppBar = ({ pageState, setPageState }) => {
         </Toolbar>
       </AppBar>
     </Box>
+
   );
 }
 
