@@ -22,7 +22,8 @@ export const QUERY_PROFILES = gql`
       name
       skills
     }
-  }`
+  }
+`;
 
 export const QUERY_THOUGHTS = gql`
   query getThoughts {
@@ -75,3 +76,4 @@ export const QUERY_SINGLE_PROFILE = gql`
       skills
     }
   }
+`;
