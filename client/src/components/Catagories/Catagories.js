@@ -1,5 +1,5 @@
 import React from 'react'
-import './Catagories.css'
+import '../CSS/Project.css'
 
 const Catagories = () => {
   return (

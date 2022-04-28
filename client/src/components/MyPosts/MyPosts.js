@@ -1,5 +1,5 @@
 import React from 'react'
-import './MyPosts.css'
+import '../CSS/Project.css'
 
 const MyPosts = () => {
   return (
