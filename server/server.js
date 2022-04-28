@@ -38,10 +38,8 @@ db.once('open', () => {
 
 const mongodb = require('mongodb').MongoClient
 
-const connectionStringURI = `mongodb://localhost:27017/brickdb`
-
 mongodb.connect(
-  connectionStringURI,
+  db.connectionString,
   {useNewIrlParser: true, useUnifiedTopology: true},
   (err, client) => {
     db = client.db()
