@@ -1,87 +1,39 @@
-import './App.css'
-import { useState } from 'react'
-import { pageState } from 'react'
-import { setPageState } from 'react'
-import CssBaseline from '@mui/material/CssBaseline'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Catagories from './components/Catagories'
-import MyPosts from './components/MyPosts'
-import CurrentPosts from './components/CurrentPosts'
-import Signup from './components/Signup'
-import Login from './components/Login'
+import React from 'react';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core'
-import { purple } from '@material-ui/core/colors'
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <>
-    <Navbar />
-   
-    <Router>
-      {/* <Layout> */}
-        <Routes>
-          <Route exact path="/">
-            <CurrentPosts />
-          </Route>
-          <Route path="/myposts">
-            <MyPosts />
-          </Route>
-        </Routes>
-      {/* </Layout> */}
-    </Router>
-    </>
+    <ApolloProvider client={client}>
+      {/* Wrap page elements in Router component to keep track of location state */}
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <Header />
+          <div className="container">
+            {/* Define routes to render different page components at different paths */}
+            <Route exact path="/">
+              <Home />
+            </Route>
+            {/* Define a route that will take in variable data */}
+            <Route exact path="/profiles/:profileId">
+              <Profile />
+            </Route>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
 export default App;
-
-
-// import { createMuiTheme, ThemeProvider } from '@material-ui/core'
-// import { purple } from '@material-ui/core/colors'
-
-// const theme = createMuiTheme({
-//   palette: {
-//     primary: {
-//       main: '#fefefe'
-//     },
-//     secondary: purple
-//   },
-//   typography: {
-//     fontFamily: 'Quicksand',
-//     fontWeightLight: 400,
-//     fontWeightRegular: 500,
-//     fontWeightMedium: 600,
-//     fontWeightBold: 700,
-//   }
-// })
-
-
-// function App() {
-
-//   const [pageState, setPageState] = useState({
-//     Catagories: false,
-//     MyPosts: false,
-//     CurrentPosts: true,
-//     Signup: false,
-//     Login: false
-//   })
-
-//   return (
-//     <ThemeProvider theme={theme}>
-//     <CssBaseline />
-//     <Navbar pageState={pageState} setPageState={setPageState} />
-//     {pageState.CurrentPosts ? <CurrentPosts /> : ''}
-//     {pageState.Catagories ? <Catagories /> : ''}
-//     {pageState.MyPosts ? <MyPosts /> : ''}
-//     {pageState.Signup ? <Signup /> : ''}
-//     {pageState.Login ? <Login /> : ''}
-//     <Footer />
-//     </ThemeProvider>
-//   )
-// }
-
-// export default App;
-
