@@ -38,7 +38,7 @@ db.once('open', () => {
 
 const mongodb = require('mongodb').MongoClient
 
-const connectionStringURI = `mongodb://localhost:27969/brickdb`
+const connectionStringURI = `mongodb://localhost:27017/brickdb`
 
 mongodb.connect(
   connectionStringURI,
@@ -51,3 +51,27 @@ mongodb.connect(
   }
 )
 
+app.post('/create', (req, res) => {
+  db.collection('brickdb').insertOne(
+    { title: req.body.title, 
+      keyWords: req.body.keyWords,
+      creator: req.body.creator,
+      date: Date().toLocaleDateString,
+      description: req.body.description,
+     },
+    (err, results) => {
+      if (err) throw err
+      res.json(results)
+    }
+  );
+});
+
+app.get('/read', (req, res) => {
+  db.collection('brickdb'
+    .find({})
+    .toArray((err, results) => {
+      if (err) throw err
+      res.send(results)
+    })
+  )
+})
