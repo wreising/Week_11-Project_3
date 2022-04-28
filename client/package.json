@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+    "@apollo/client": "^3.6.0",
+=======
     "@apollo/client": "^3.3.5",
+>>>>>>> cdbf1a0ac1f51e7bb7bef0b5b81354a11fffbaa9
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.6.2",
@@ -12,8 +16,13 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
+    "install": "^0.13.0",
+=======
     "jwt-decode": "^3.1.2",
+>>>>>>> cdbf1a0ac1f51e7bb7bef0b5b81354a11fffbaa9
     "material": "^0.4.3",
+    "npm": "^8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
