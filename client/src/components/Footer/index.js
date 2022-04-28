@@ -1,6 +1,4 @@
 import React from 'react'
-import Grid from '@mui/material/Grid'
-import { color } from '@mui/system';
 
 const style = {
   backgroundColor: "#2196f3",
