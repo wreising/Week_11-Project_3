@@ -29,9 +29,9 @@ const ButtonAppBar = ({ pageState, setPageState }) => {
     setPageState({ ...pageState, CurrentPosts: false, Catagories: false, MyPosts: false, Login: true, Signup: false })
   }
 
-  const handleOpenSignup = () => {
-    setPageState({ ...pageState, CurrentPosts: false, Catagories: false, MyPosts: false, Login: false, Signup: true })
-  }
+  // const handleOpenSignup = () => {
+  //   setPageState({ ...pageState, CurrentPosts: false, Catagories: false, MyPosts: false, Login: false, Signup: true })
+  // }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
