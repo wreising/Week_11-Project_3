@@ -13,28 +13,32 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 // import './App.scss';
-import Dropdown from './components/Header/Dropdown.js';
+// import Dropdown from './components/Header/Dropdown.js';
 
-const items = [
-  {
-    id: 1,
-    value: 'Pulp Fiction',
-  },
-  {
-    id: 2,
-    value: 'The Prestige',
-  },
-  {
-    id: 3,
-    value: 'Blade Runner 2049',
-  },
-];
+// const items = [
+//   {
+//     id: 1,
+//     value: 'Pulp Fiction',
+//   },
+//   {
+//     id: 2,
+//     value: 'The Prestige',
+//   },
+//   {
+//     id: 3,
+//     value: 'Blade Runner 2049',
+//   },
+// ];
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 
 function App() {
   return (
-    <ApolloProvider 
-    // client={client}
+    <ApolloProvider client={client}
     >
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
@@ -47,7 +51,7 @@ function App() {
                   🎥
                 </span>
               </h1>
-              <Dropdown title="Select movie" items={items} multiSelect />
+              {/* <Dropdown title="Select movie" items={items} multiSelect /> */}
             </div>
             <Route exact path="/">
               <CurrentPosts />
