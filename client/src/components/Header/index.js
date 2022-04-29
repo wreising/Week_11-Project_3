@@ -26,16 +26,16 @@ const Header = () => {
             MyPosts
           </h1>
         </Link>
-        {/* <Link className="text-dark" to="/Catagories">
+        <Link className="text-dark" to="/Catagories">
           <h1 className="m-0" style={{ fontSize: '2rem' }}>
             Catagories
           </h1>
-        </Link> */}
-        <Link className="text-dark" to="/Single">
+        </Link>
+        {/* <Link className="text-dark" to="/Single">
           <h1 className="m-0" style={{ fontSize: '2rem' }}>
             Single
           </h1>
-        </Link>
+        </Link> */}
           <div>
             {Auth.loggedIn() ? (
               <>
