@@ -1,4 +1,6 @@
+import { borderRadius, width } from '@mui/system';
 import React from 'react'
+import "../../Main.css"
 
 const style = {
   backgroundColor: "red",
@@ -10,7 +12,11 @@ const style = {
   bottom: "0",
   height: "40px",
   width: "100%",
-  color: "white"
+  color: "white",
+  borderRadiu: "20px",
+  width: "90%",
+  marginLeft: "auto",
+  marginRight: "auto"
 };
 
 export default function App() {

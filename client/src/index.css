@@ -929,7 +929,10 @@ a:hover {
 
 .bg-info {
   background-image: url(./components/Header/legoBG.png);
-  /* background-color: #ddff00 !important; */
+  border-radius: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bg-danger {
