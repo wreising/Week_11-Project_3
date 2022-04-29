@@ -16,22 +16,22 @@ const Header = () => {
     <header className="bg-info text-dark mb-4 py-3 display-flex align-center" >
       <div className="container justify-space-between-lg" justify-center align-center text-center>
         <container class="topContainer">
-        <Link className="text-dark" to="/">
-          <h1 className="m-0" style={{ fontSize: '2rem' }}>
-            Current Posts
-          </h1>
-        </Link>
-        <Link className="text-dark" to="/MyPosts">
-          <h1 className="m-0" style={{ fontSize: '2rem' }}>
-            MyPosts
-          </h1>
-        </Link>
-        <Link className="text-dark" to="/Catagories">
-          <h1 className="m-0" style={{ fontSize: '2rem' }}>
-            Catagories
-          </h1>
-        </Link>
-        {/* <Link className="text-dark" to="/Single">
+          <Link className="text-dark" to="/">
+            <h1 className="m-0" style={{ fontSize: '3rem' }}>
+              Posts
+            </h1>
+          </Link>
+          <Link className="text-dark" to="/MyPosts">
+            <h1 className="m-0" style={{ fontSize: '3rem' }}>
+              MyPosts
+            </h1>
+          </Link>
+          <Link className="text-dark" to="/Catagories">
+            <h1 className="m-0" style={{ fontSize: '3rem' }}>
+              Catagories
+            </h1>
+          </Link>
+          {/* <Link className="text-dark" to="/Single">
           <h1 className="m-0" style={{ fontSize: '2rem' }}>
             Single
           </h1>
@@ -54,7 +54,7 @@ const Header = () => {
               </>
             )}
           </div>
-        {/* <Link className="text-dark" to="/Signup">
+          {/* <Link className="text-dark" to="/Signup">
           <h1 className="m-0" style={{ fontSize: '2rem' }}>
             Signup
           </h1>
@@ -67,7 +67,7 @@ const Header = () => {
         </Link> */}
         </container>
       </div>
-    </header>
+    </header >
   );
 };
 

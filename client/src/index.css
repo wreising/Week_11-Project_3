@@ -924,7 +924,8 @@ a:hover {
 }
 
 .bg-info {
-  background-color: #2196f3 !important;
+  background-image: url(./components/Header/legoBG.png);
+  /* background-color: #ddff00 !important; */
 }
 
 .bg-danger {
