@@ -44,15 +44,7 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
-            <div className="container">
-              <h1 style={{ textAlign: 'center' }}>
-                Buy Movies{' '}
-                <span role="img" aria-label="Movie projector">
-                  🎥
-                </span>
-              </h1>
-              {/* <Dropdown title="Select movie" items={items} multiSelect /> */}
-            </div>
+          
             <Route exact path="/">
               <CurrentPosts />
             </Route>
