@@ -903,11 +903,14 @@ a:hover {
 }
 
 .text-dark {
-  color: #1a1a1a !important;
+  color: rgb(26, 26, 26) !important;
 }
 
 .text-red {
-  color: #ff0000 !important;
+  color: #f36067 !important;
+}
+.text-yellow {
+  color: #fde87a !important;
 }
 
 .text-white {

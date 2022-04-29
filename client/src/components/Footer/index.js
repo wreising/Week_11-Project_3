@@ -1,7 +1,7 @@
 import React from 'react'
 
 const style = {
-  backgroundColor: "red",
+  backgroundColor: "#fde87a",
   borderTop: "1px solid #E7E7E7",
   textAlign: "center",
   padding: "10px",
@@ -10,7 +10,7 @@ const style = {
   bottom: "0",
   height: "40px",
   width: "100%",
-  color: "white"
+  color: "black"
 };
 
 export default function App() {
