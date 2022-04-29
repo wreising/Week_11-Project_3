@@ -1,25 +1,31 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-// import ProfileList from '../components/ProfileList';
-// import ProfileForm from '../components/ProfileForm';
+import PostList from '../components/PostList';
 
-import { QUERY_PROFILES } from '../utils/queries';
+import { QUERY_POSTS } from '../utils/queries';
 
-const CurrentPosts = () => {
-  const { loading, data } = useQuery(QUERY_PROFILES);
-  const profiles = data?.profiles || [];
+const Home = () => {
+  const { loading, data } = useQuery(QUERY_POSTS);
+  const posts = data?.posts || [];
 
   return (
     <main>
       <div className="flex-row justify-center">
-        <div class="window">
-          <h1>Current Posts</h1>
-          <p>Window to fill with Current Posts.</p>
+        
+        <div className="col-12 col-md-8 mb-3">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <PostList
+              posts={posts}
+              title="Lego Lover's Creations"
+            />
+          )}
         </div>
       </div>
     </main>
   );
 };
 
-export default CurrentPosts;
+export default Home;
