@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import CurrentPosts from './pages/CurrentPost';
-import Catagories from './pages/Catagories';
+import Categories from './pages/Categories';
 import Login from './pages/Login';
 import MyPosts from './pages/MyPosts';
 import Signup from './pages/Signup';
@@ -48,8 +48,8 @@ function App() {
             <Route exact path="/">
               <CurrentPosts />
             </Route>
-            <Route exact path="/Catagories">
-              <Catagories />
+            <Route exact path="/Categories">
+              <Categories />
             </Route>
             <Route exact path="/Login">
               <Login />
@@ -59,9 +59,6 @@ function App() {
             </Route>
             <Route exact path="/MyPosts">
               <MyPosts />
-            </Route>
-            <Route exact path="/Single">
-              <Single />
             </Route>
           </div>
           <Footer />
