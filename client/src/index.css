@@ -906,6 +906,10 @@ a:hover {
   color: #1a1a1a !important;
 }
 
+.text-red {
+  color: #ff0000 !important;
+}
+
 .text-white {
   color: #ffffff !important;
 }
