@@ -1,6 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const { graphqlUploadExpress } = require('graphql-upload');
 
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
@@ -20,6 +21,7 @@ server.applyMiddleware({ app });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(graphqlUploadExpress());
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
@@ -36,18 +38,5 @@ db.once('open', () => {
   });
 });
 
-const mongodb = require('mongodb').MongoClient
 
-const connectionStringURI = `mongodb://localhost:27969/brickdb`
-
-mongodb.connect(
-  connectionStringURI,
-  {useNewIrlParser: true, useUnifiedTopology: true},
-  (err, client) => {
-    db = client.db()
-    app.listen(port, () => {
-      console.log(`BrickBlog listening at http://localhost:${port}`)
-    })
-  }
-)
 
