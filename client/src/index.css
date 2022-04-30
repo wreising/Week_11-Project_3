@@ -923,12 +923,10 @@ a:hover {
 }
 
 .bg-info {
-  background-image: url(./components/Header/legoBG.png);
   border-radius: 20px;
-  width: 90%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
-  /* background-color: #2196f3 !important; */
   background-image: url(./images/legoBG.png);
 }
 
