@@ -1,6 +1,5 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
-   ========================================================================== */
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -13,7 +12,6 @@ html {
 }
 
 /* Sections
-   ========================================================================== */
 /**
  * Remove the margin in all browsers.
  */
@@ -38,7 +36,6 @@ h1 {
 }
 
 /* Grouping content
-   ========================================================================== */
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -64,7 +61,6 @@ pre {
 }
 
 /* Text-level semantics
-   ========================================================================== */
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -134,7 +130,6 @@ sup {
 }
 
 /* Embedded content
-   ========================================================================== */
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -143,7 +138,6 @@ img {
 }
 
 /* Forms
-   ========================================================================== */
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -306,7 +300,6 @@ textarea {
 }
 
 /* Interactive
-   ========================================================================== */
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -322,7 +315,6 @@ summary {
 }
 
 /* Misc
-   ========================================================================== */
 /**
  * Add the correct display in IE 10+.
  */
@@ -931,7 +923,10 @@ a:hover {
 }
 
 .bg-info {
-  /* background-color: #2196f3 !important; */
+  border-radius: 20px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
   background-image: url(./images/legoBG.png);
 }
 
