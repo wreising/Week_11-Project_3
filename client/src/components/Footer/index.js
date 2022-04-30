@@ -3,7 +3,7 @@ import React from 'react'
 import "../../Main.css"
 
 const style = {
-  backgroundColor: "red",
+  backgroundColor: "rgb(242 94 101)",
   borderTop: "1px solid #E7E7E7",
   textAlign: "center",
   padding: "10px",
@@ -17,6 +17,7 @@ const style = {
   width: "90%",
   marginLeft: "auto",
   marginRight: "auto"
+  color: "black"
 };
 
 export default function App() {
