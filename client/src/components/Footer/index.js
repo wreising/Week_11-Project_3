@@ -1,15 +1,21 @@
+import { borderRadius, width } from '@mui/system';
 import React from 'react'
+import "../../Main.css"
 
 const style = {
-  backgroundColor: "red",
+  backgroundColor: "rgb(242 94 101)",
   borderTop: "1px solid #E7E7E7",
   textAlign: "center",
   padding: "10px",
   position: "fixed",
-  left: "0",
+  // left: "0",
   bottom: "0",
   height: "40px",
   width: "100%",
+  color: "white",
+  borderRadius: "20px",
+  marginLeft: "auto",
+  marginRight: "auto",
   color: "white"
 };
 
