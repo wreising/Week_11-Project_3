@@ -1,5 +1,6 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
+   ========================================================================== */
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -12,6 +13,7 @@ html {
 }
 
 /* Sections
+   ========================================================================== */
 /**
  * Remove the margin in all browsers.
  */
@@ -36,6 +38,7 @@ h1 {
 }
 
 /* Grouping content
+   ========================================================================== */
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -61,6 +64,7 @@ pre {
 }
 
 /* Text-level semantics
+   ========================================================================== */
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -130,6 +134,7 @@ sup {
 }
 
 /* Embedded content
+   ========================================================================== */
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -138,6 +143,7 @@ img {
 }
 
 /* Forms
+   ========================================================================== */
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -300,6 +306,7 @@ textarea {
 }
 
 /* Interactive
+   ========================================================================== */
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -315,6 +322,7 @@ summary {
 }
 
 /* Misc
+   ========================================================================== */
 /**
  * Add the correct display in IE 10+.
  */
@@ -887,22 +895,15 @@ a:hover {
 }
 
 .text-default {
-  color: #aeaeae !important;
+  color: black !important;
 }
 
 .text-light {
-  color: #d9e9e8 !important;
+  color: black !important;
 }
 
 .text-dark {
-  color: rgb(26, 26, 26) !important;
-}
-
-.text-red {
-  color: #f36067 !important;
-}
-.text-yellow {
-  color: #fde87a !important;
+  color: #1a1a1a !important;
 }
 
 .text-white {
@@ -919,16 +920,21 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: #fde87a !important;
 }
 
 .bg-info {
-  border-radius: 20px;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  background-image: url(./images/legoBG.png);
+  background-color: #1bbc9b !important;
 }
+
+.bg-banner {
+  background-image: url(../src/assets/images/legoBGred.png);
+}
+
+.bg-banner-yellow {
+  background-image: url(../src/assets/images/legoBGyellow.png);
+}
+
 
 .bg-danger {
   background-color: #e64c66 !important;
@@ -1016,7 +1022,7 @@ a:hover {
 
 .btn.btn-primary {
   background-color: #fde87a;
-  color: #000000;
+  color: black;
 }
 
 .btn.btn-primary:hover {
@@ -1033,21 +1039,21 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #fde87a;
-  color: #000000;
+  background-color: #fde77a;
+  color: black;
 }
 
 .btn.btn-info:hover {
-  background-color: #7c713c;
+  background-color: #fde87a;
 }
 
 .btn.btn-light {
-  background-color: #fde87a;
-  color: #000000;
+  background-color: #d9e9e8;
+  color: #1a1a1a;
 }
 
 .btn.btn-light:hover {
-  background-color: #7c713c;
+  background-color: rgb(234, 234, 123);
 }
 
 .btn.btn-dark {
@@ -1093,8 +1099,8 @@ a:hover {
 
 .card .card-header {
   padding: 0.375rem;
-  background-color: #fde87a;
-  color: #000000;
+  background-color: #2d3e50;
+  color: #d9e9e8;
 }
 
 .card .card-body {

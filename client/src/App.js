@@ -8,12 +8,10 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import CurrentPosts from './pages/CurrentPost';
-import Categories from './pages/Categories';
-import Login from './pages/Login';
-import MyPosts from './pages/MyPosts';
+import Home from './pages/Home';
 import Signup from './pages/Signup';
-import Single from './pages/Single';
+import Login from './pages/Login';
+import SinglePost from './pages/SinglePost';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -42,26 +40,20 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
   return (
-    <ApolloProvider client={client}
-    >
+    <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
-          
             <Route exact path="/">
-              <CurrentPosts />
+              <Home />
             </Route>
-            <Route exact path="/Categories">
-              <Categories />
-            </Route>
-            <Route exact path="/Login">
+            <Route exact path="/login">
               <Login />
             </Route>
-            <Route exact path="/Signup">
+            <Route exact path="/signup">
               <Signup />
             </Route>
             <Route exact path="/me">
@@ -70,8 +62,8 @@ function App() {
             <Route exact path="/profiles/:username">
               <Profile />
             </Route>
-            <Route exact path="/MyPosts">
-              <MyPosts />
+            <Route exact path="/posts/:postId">
+              <SinglePost />
             </Route>
           </div>
           <Footer />

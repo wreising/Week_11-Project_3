@@ -62,7 +62,7 @@ const PostForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Share a new post!</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -80,7 +80,7 @@ const PostForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="postText"
-                placeholder="Describe your new creation!"
+                placeholder="Here's a new post..."
                 value={postText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -90,7 +90,7 @@ const PostForm = () => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Share a new creation
+                Add Post
               </button>
             </div>
             {error && (
@@ -102,7 +102,7 @@ const PostForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share a new Lego Creation! Please{' '}
+          You need to be logged in to share your posts. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

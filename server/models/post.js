@@ -2,41 +2,17 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema({
-  postTitle: {
+  postText: {
     type: String,
-    required: 'You need to title your creation!',
+    required: 'You need to leave a post!',
     minlength: 1,
-    maxlength: 150,
+    maxlength: 280,
     trim: true,
   },
   postAuthor: {
     type: String,
     required: true,
     trim: true,
-  },
-  postDescription: {
-    type: String,
-    required: 'Describe your creation!',
-    minlength: 1,
-    maxlength: 150,
-    trim: true,
-  },
-  image: {
-    {
-      fileName: {
-        type: String,
-        required: true,
-      },
-      file: {
-        data: Buffer,
-        contentType: String,
-      },
-      uploadDate: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
-      },
-    },
   },
   createdAt: {
     type: Date,

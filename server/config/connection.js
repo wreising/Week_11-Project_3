@@ -1,12 +1,13 @@
-const { connect, connection } = require('mongoose');
+const mongoose = require('mongoose');
 
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/brick-blogDB',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
-const connectionString =
-  process.env.MONGODB_URI || 'mongodb://localhost:27017/brick-blogDB';
-
-connect(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-module.exports = connection;
+module.exports = mongoose.connection;
