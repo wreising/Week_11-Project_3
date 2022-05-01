@@ -1,5 +1,11 @@
 import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import CurrentPosts from './pages/CurrentPost';
@@ -8,30 +14,31 @@ import Login from './pages/Login';
 import MyPosts from './pages/MyPosts';
 import Signup from './pages/Signup';
 import Single from './pages/Single';
-// import Navbar from './components/Navbar';
+import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// import './App.scss';
-// import Dropdown from './components/Header/Dropdown.js';
+// Construct our main GraphQL API endpoint
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
-// const items = [
-//   {
-//     id: 1,
-//     value: 'Pulp Fiction',
-//   },
-//   {
-//     id: 2,
-//     value: 'The Prestige',
-//   },
-//   {
-//     id: 3,
-//     value: 'Blade Runner 2049',
-//   },
-// ];
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
 const client = new ApolloClient({
-  uri: '/graphql',
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -56,6 +63,12 @@ function App() {
             </Route>
             <Route exact path="/Signup">
               <Signup />
+            </Route>
+            <Route exact path="/me">
+              <Profile />
+            </Route>
+            <Route exact path="/profiles/:username">
+              <Profile />
             </Route>
             <Route exact path="/MyPosts">
               <MyPosts />
