@@ -939,11 +939,11 @@ a:hover {
 
 
 .bg-danger {
-  background-color: #e64c66 !important;
+  background-color: rgb(65, 131, 196) !important;
 }
 
 .bg-light {
-  background-color: #d9e9e8 !important;
+  background-color: hsl(205deg 91% 43%) !important;
 }
 
 .bg-dark {
