@@ -33,7 +33,7 @@ const SinglePost = () => {
       </h3>
       <div className=" py-4">
         <div className="centered-image">
-              <img src={post.postImage} />
+              <img src={post.postImage} alt={post.postImage}/>
             </div>
         <blockquote
           className="p-4 bg-light"

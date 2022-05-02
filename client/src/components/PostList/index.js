@@ -8,12 +8,13 @@ const PostList = ({
   showUsername = true,
 }) => {
   if (!posts.length) {
-    return <h3>No posts Yet</h3>;
+    return <div><h2>Welcome to Brick Blog, a place for Lego Lovers to share their thoughts on Lego sets, media and their own creations!</h2><h4>Be the first to create a post and share your thoughts! Sign Up or Log In above to get started.</h4></div>
+    ;
   }
 
   return (
     <div>
-      {showTitle && <h3>{title}</h3>}
+      <div><h3>Welcome to Brick Blog, a place for Lego Lovers to share their thoughts on Lego sets, media and their own creations!</h3><h4>Sign Up or Log In above to get started.</h4></div>
       {posts &&
         posts.map((post) => (
           <div key={post._id} className="card mb-3">
@@ -37,7 +38,7 @@ const PostList = ({
               )}
             </h4>
             <div className="centered-image">
-              <img src={post.postImage} />
+              <img src={post.postImage} alt={post.postImage} />
             </div>
             <div className="card-body bg-light p-2">
               <p>{post.postText}</p>

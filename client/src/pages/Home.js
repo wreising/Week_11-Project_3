@@ -2,7 +2,6 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import PostList from '../components/PostList';
-import PostForm from '../components/PostForm';
 
 import { QUERY_POSTS } from '../utils/queries';
 
@@ -20,7 +19,6 @@ const Home = () => {
           ) : (
             <PostList
               posts={posts}
-              title="Thoughts on Lego sets from other Lego Lovers! Sign Up or Log in to share your own!"
             />
           )}
         </div>
