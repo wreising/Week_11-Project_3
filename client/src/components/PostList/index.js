@@ -25,7 +25,7 @@ const PostList = ({
                 >
                   {post.postAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    share this set on {post.createdAt}
+                    shared this set on {post.createdAt}
                   </span>
                 </Link>
               ) : (
