@@ -28,16 +28,19 @@ const SinglePost = () => {
       <h3 className="card-header bg-banner-yellow text-dark p-2 m-0">
         {post.postAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
-          had this post on {post.createdAt}
+          share this set on {post.createdAt}
         </span>
       </h3>
-      <div className="bg-light py-4">
+      <div className=" py-4">
+        <div className="centered-image">
+              <img src={post.postImage} alt={post.postImage}/>
+            </div>
         <blockquote
-          className="p-4"
+          className="p-4 bg-light"
           style={{
             fontSize: '1.5rem',
             fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
+            
             lineHeight: '1.5',
           }}
         >
