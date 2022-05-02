@@ -144,6 +144,11 @@ img {
   height: 50%;
 }
 
+.image-center img{
+  width: 25%;
+  height: 25%;
+}
+
 /* Forms
    ========================================================================== */
 /**
@@ -1041,21 +1046,21 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #fde77a;
+  background-color: hsl(205deg 91% 43%);
   color: black;
 }
 
 .btn.btn-info:hover {
-  background-color: #fde87a;
+  background-color: rgb(20, 157, 255);
 }
 
 .btn.btn-light {
-  background-color: #d9e9e8;
+  background-color: white;
   color: #1a1a1a;
 }
 
 .btn.btn-light:hover {
-  background-color: rgb(234, 234, 123);
+  background-color: rgb(20, 157, 255);
 }
 
 .btn.btn-dark {

@@ -25,19 +25,19 @@ const PostList = ({
                 >
                   {post.postAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this post on {post.createdAt}
+                    share this set on {post.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this post on {post.createdAt}
+                    You shared this set on {post.createdAt}
                   </span>
                 </>
               )}
             </h4>
-            <div className="">
-              <img src="https://www.lego.com/cdn/cs/set/assets/blt834c5ddd9d65a669/75300.jpg?fit=bounds&format=jpg&quality=80&width=1200&height=1200&dpr=1" />
+            <div className="centered-image">
+              <img src={post.postImage} />
             </div>
             <div className="card-body bg-light p-2">
               <p>{post.postText}</p>
