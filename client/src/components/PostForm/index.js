@@ -7,8 +7,10 @@ import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
+
 const PostForm = () => {
   const [postText, setPostText] = useState('');
+  const [postImage, setPostImage] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -41,11 +43,13 @@ const PostForm = () => {
       const { data } = await addPost({
         variables: {
           postText,
+          postImage,
           postAuthor: Auth.getProfile().data.username,
         },
       });
 
       setPostText('');
+      setPostImage('');
     } catch (err) {
       console.error(err);
     }
@@ -58,7 +62,12 @@ const PostForm = () => {
       setPostText(value);
       setCharacterCount(value.length);
     }
+
+    if (name === 'postImage' && value.length <= 500) {
+      setPostImage(value);
+    }
   };
+  
 
   return (
     <div>
@@ -86,6 +95,21 @@ const PostForm = () => {
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
+
+              
+            </div>
+
+            <div className="col-12 col-lg-9">
+              <textarea
+                name="postImage"
+                placeholder="Provide a new image URL"
+                value={postImage}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+
+              
             </div>
 
             <div className="col-12 col-lg-3">

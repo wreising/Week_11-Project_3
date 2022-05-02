@@ -36,6 +36,9 @@ const PostList = ({
                 </>
               )}
             </h4>
+            <div className="">
+              <img src="https://www.lego.com/cdn/cs/set/assets/blt834c5ddd9d65a669/75300.jpg?fit=bounds&format=jpg&quality=80&width=1200&height=1200&dpr=1" />
+            </div>
             <div className="card-body bg-light p-2">
               <p>{post.postText}</p>
             </div>

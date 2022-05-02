@@ -4,7 +4,7 @@ const dateFormat = require('../utils/dateFormat');
 const postSchema = new Schema({
   postText: {
     type: String,
-    required: 'You need to leave a post!',
+    required: 'You need to describe your post!',
     minlength: 1,
     maxlength: 280,
     trim: true,
@@ -13,6 +13,12 @@ const postSchema = new Schema({
     type: String,
     required: true,
     trim: true,
+  },
+  postImage: {
+    type: String,
+    required: 'You need to add an image url!',
+    minlength: 1,
+    maxlength: 280,
   },
   createdAt: {
     type: Date,
