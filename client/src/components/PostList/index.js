@@ -8,7 +8,7 @@ const PostList = ({
   showUsername = true,
 }) => {
   if (!posts.length) {
-    return <h3>Currently no posts yet!</h3>;
+    return <h3>No posts Yet</h3>;
   }
 
   return (
@@ -17,11 +17,11 @@ const PostList = ({
       {posts &&
         posts.map((post) => (
           <div key={post._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 className="card-header bg-primary text-dark p-2 m-0">
               {showUsername ? (
                 <Link
                   className="text-light"
-                  to={`/users/${post.postAuthor}`}
+                  to={`/profiles/${post.postAuthor}`}
                 >
                   {post.postAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
@@ -36,6 +36,9 @@ const PostList = ({
                 </>
               )}
             </h4>
+            <div className="">
+              <img src="https://www.lego.com/cdn/cs/set/assets/blt834c5ddd9d65a669/75300.jpg?fit=bounds&format=jpg&quality=80&width=1200&height=1200&dpr=1" />
+            </div>
             <div className="card-body bg-light p-2">
               <p>{post.postText}</p>
             </div>
@@ -43,7 +46,7 @@ const PostList = ({
               className="btn btn-primary btn-block btn-squared"
               to={`/posts/${post._id}`}
             >
-              Leave a comment on this creation!
+              Join the discussion on this post.
             </Link>
           </div>
         ))}
