@@ -46,7 +46,7 @@ const PostList = ({
               className="btn btn-primary btn-block btn-squared"
               to={`/posts/${post._id}`}
             >
-              Join the discussion on this post.
+              See what other's have to say about this post!
             </Link>
           </div>
         ))}
